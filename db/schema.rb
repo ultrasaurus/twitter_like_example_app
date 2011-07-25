@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110725013034) do
+ActiveRecord::Schema.define(:version => 20110725014200) do
+
+  create_table "followings", :force => true do |t|
+    t.integer  "followed_person_id"
+    t.integer  "follower_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "followings", ["followed_person_id"], :name => "index_followings_on_followed_person_id"
+  add_index "followings", ["follower_id"], :name => "index_followings_on_follower_id"
 
   create_table "languages", :force => true do |t|
     t.string   "code"
