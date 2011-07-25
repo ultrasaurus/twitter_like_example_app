@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110724233532) do
+ActiveRecord::Schema.define(:version => 20110725013034) do
 
   create_table "languages", :force => true do |t|
     t.string   "code"
@@ -27,5 +27,16 @@ ActiveRecord::Schema.define(:version => 20110724233532) do
   end
 
   add_index "people", ["language_id"], :name => "index_people_on_language_id"
+
+  create_table "tweets", :force => true do |t|
+    t.string   "message"
+    t.integer  "person_id"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tweets", ["language_id"], :name => "index_tweets_on_language_id"
+  add_index "tweets", ["person_id"], :name => "index_tweets_on_person_id"
 
 end

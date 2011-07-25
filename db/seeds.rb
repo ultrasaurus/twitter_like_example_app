@@ -11,3 +11,10 @@ Language.find_or_create_by_code_and_english_name('en', 'English')
 Language.find_or_create_by_code_and_english_name('de', 'German')
 Language.find_or_create_by_code_and_english_name('fr', 'French')
 Language.find_or_create_by_code_and_english_name('es', 'Spanish')
+
+Person.create("Jean Luc Picard", :language_id => 3)
+Person.create("William Riker", :language_id => 1)
+
+98.times do 
+  Person.create(:name => Faker::Name.name, :language_id => rand(4)+1)
+end

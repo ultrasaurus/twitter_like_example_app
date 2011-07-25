@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Person do
+describe Tweet do
   should_belong_to :language
-  should_have_many :tweets
+  should_belong_to :person
 end
