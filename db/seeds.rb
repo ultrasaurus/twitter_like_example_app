@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+#
+
+Language.find_or_create_by_code_and_english_name('en', 'English')
+Language.find_or_create_by_code_and_english_name('de', 'German')
+Language.find_or_create_by_code_and_english_name('fr', 'French')
+Language.find_or_create_by_code_and_english_name('es', 'Spanish')
