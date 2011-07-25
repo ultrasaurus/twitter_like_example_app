@@ -38,6 +38,9 @@ if Person.count < 100
     person.followers = random_list(people, 10, person)
     person.followed_people = random_list(people, 10, person)
     person.save
+    rand(10).times do
+      person.tweets.create(:language_id => rand(4)+1)
+    end
   end
 
 end
